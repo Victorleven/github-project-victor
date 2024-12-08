@@ -1,0 +1,55 @@
+@font-face {
+    font-family: summerfont;
+    src: url(/misc/NatureBeautyPersonalUse-9Y2DK.ttf);
+}
+
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    12.5%{transform: rotate(15deg);}
+    37.5%{transform: rotate(-15deg);}
+    62.5%{transform: rotate(10deg);}
+    87.5%{transform: rotate(-10deg);}
+    100%{transform: rotate(0deg);}
+}
+
+header h1{
+    font-family: summerfont;
+    font-size: 38px;
+    font-weight: 550;
+    color: #2196F3;
+    margin-top: auto;
+    margin-left: 1vw;
+}
+
+.fa-solid {
+    position:relative;
+    bottom: 3px;  
+    transform-origin: 50% 100%;
+    display:inline-flex;
+    color: #2196F3;
+    scale: 0.9;
+}
+
+#logo:hover .fa-solid{
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.fa-solid:hover {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+
+
+.structure {
+    display: grid;
+    grid-template-areas:
+    "header nav nav"
+    "section section section"
+    "footer footer footer";
+    grid-template-columns: 3fr 1fr;
+    column-gap: 5vw;
+}
