@@ -3,6 +3,12 @@
     src: url(/misc/NatureBeautyPersonalUse-9Y2DK.ttf);
 }
 
+@font-face {
+    font-family: travelfont;
+    src: url(/misc/trip-sans-variable.ttf);
+}
+
+
 @keyframes rotate {
     0%{transform: rotate(0deg);}
     12.5%{transform: rotate(15deg);}
@@ -12,13 +18,71 @@
     100%{transform: rotate(0deg);}
 }
 
-header h1{
+h1 {
+    font-size: 34px;
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+    margin-bottom: auto;
+    border: 1px solid black;
+}
+
+header h1 {
     font-family: summerfont;
-    font-size: 38px;
     font-weight: 550;
-    color: #2196F3;
+    color: #252529;
     margin-top: auto;
     margin-left: 1vw;
+}
+
+nav {
+    grid-area: nav;
+    font-size: 21px;
+    margin-top: 25px;
+    margin-bottom: auto;
+    border: 1px solid black;
+}
+
+a {
+    font-family:'Tahoma', 'Arial', sans-serif;
+}
+
+body {
+    height: 100%;
+}
+
+.structure {
+    display: grid;
+    grid-template-areas:
+    "header nav nav"
+    "herosection herosection herosection"
+    "credsection credsection credsection"
+    "footer footer footer";
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 0.4fr 0.2fr;
+    column-gap: 5vw;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.flexnavbar {
+    display: flex;
+    gap: 7vw;
+}
+
+.navlink {
+    font-family: travelfont;
+    font-size: 21px;
+    font-weight: bold;
+    color: #252529;
+    text-decoration: none;
+}
+
+.navlink:hover {
+    color: #2196F3;
+    text-decoration:underline;
 }
 
 .fa-solid {
@@ -42,14 +106,60 @@ header h1{
     animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
+.herosection {
+    grid-area: herosection;
+    position:relative;
+    justify-self: center;
+    text-align:center;
+    border: 1px solid black;
+}
 
+#Greece {
+    filter: brightness(95%);
+    width: 50%;
+    border-radius: 20px;
+}
 
-.structure {
-    display: grid;
-    grid-template-areas:
-    "header nav nav"
-    "section section section"
-    "footer footer footer";
-    grid-template-columns: 3fr 1fr;
-    column-gap: 5vw;
+#heroslogan {
+    font-family: travelfont;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width:350px;
+    text-shadow: 0.5px 0.5px 3px black;
+}
+
+#Greece:hover {
+    filter:brightness(85%);
+}
+
+#herolink:hover #Greece:not(:hover) {
+    filter:brightness(85%);
+    
+}
+
+p {
+    font-size: 13;
+}
+
+.credsection {
+    grid-area: credsection;
+}
+
+footer {
+    grid-area: footer;
+    position: absolute;
+    justify-self: center;
+    background-color: #2196F3;
+    width: 101%;
+    bottom: 0;
+    overflow: hidden;
+    border: 1px solid black;
+    
+}
+
+.footertext {
+    color: white;
 }
