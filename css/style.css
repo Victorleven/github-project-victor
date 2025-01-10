@@ -23,15 +23,23 @@ h1 {
     font-family: travelfont;
 }
 
+h2 {
+    font-size: 21px;
+    font-family: travelfont;
+}
+
 p {
+    font-family: travelfont;
     font-size: 13;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #252529;
 }
 
 header {
     grid-area: header;
     justify-self: center;
     margin-bottom: auto;
-    border: 1px solid black;
 }
 
 header h1 {
@@ -51,7 +59,6 @@ nav {
     font-size: 21px;
     margin-top: 25px;
     margin-bottom: auto;
-    border: 1px solid black;
 }
 
 .indexstructure {
@@ -74,12 +81,26 @@ nav {
     "norway norway norway"
     "greece greece greece"
     "neworleans neworleans neworleans"
+    "endsections endsections endsections"
     "footer footer footer";
     grid-template-columns: 1.2fr 1fr 1fr;
     grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 0.4fr;
     column-gap: 5vw;
     height: 100vh;
 }
+
+.cardpagestructure {
+    display: grid;
+    grid-template-areas:
+    "header nav nav"
+    "flexcards flexcards flexcards"
+    "footer footer footer";
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 0.4fr;
+    column-gap: 5vw;
+    height: 100vh;
+}
+
 
 .flexnavbar {
     display: flex;
@@ -92,12 +113,22 @@ nav {
     font-weight: bold;
     color: #252529;
     text-decoration: none;
+    text-underline-offset: 5px;
 }
 
 .navlink:hover {
     color: #2196F3;
     text-decoration:underline;
 }
+
+#destlinkactive {
+    text-decoration:underline;
+}
+
+#contactlinkactive {
+    text-decoration:underline;
+}
+
 
 #logoicon {
     position:relative;
@@ -134,9 +165,9 @@ nav {
 }
 
 #heroslogan {
-    font-family: travelfont;
+    line-height: 1.15;
     position: absolute;
-    top: 45%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -150,12 +181,97 @@ nav {
 
 #herolink:hover #heroimg:not(:hover) {
     filter:brightness(85%);
-    
 }
 
 .introsection {
     grid-area: introsection;
-    margin-left: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.destsection {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#norway {
+    grid-area: norway;
+}
+
+#norwayimg {
+    width: 1000px;
+    border-radius: 20px;
+}
+
+#greece {
+    grid-area: greece;
+}
+
+#greeceimg {
+    width: 1000px;
+    border-radius: 20px;
+}
+
+#neworleans {
+    grid-area: neworleans;
+}
+
+#neworleansimg {
+    width: 1000px;
+    border-radius: 20px;
+ }
+
+.flexcards {
+    grid-area: flexcards;
+    margin-top: 10px;
+    margin-left: 12vw;
+    margin-bottom: 20px;
+    display: flex;
+    column-gap: 8vw;
+    row-gap: 10vh;
+    width: 80vw;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.biocard {
+    display: block;
+    min-height: 400px;
+    max-height: 400px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition:all 0.5s ease-in-out;
+}
+
+.biocard:hover {
+    max-height: 800px;
+    width: 270px;
+}
+
+.cardimg {
+    width: 100%;
+}
+
+.name {
+    margin-top: 10px;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bio {
+    margin-left: 7px;
+    margin-right: 5px;
 }
 
 footer {
@@ -163,17 +279,15 @@ footer {
     justify-self: center;
     background-color: #2196F3;
     width: 101.3%;
-    margin-top: 8vh;
+    margin-top: 2em;
     height: 15vh;
-    
+    overflow-x: hidden;
 }
 
 .footerlogo {
-    font-family: travelfont;
     text-indent: 10px;
     margin-top: 35px;
     color: white;
-    
 }
 
 #footericon {
@@ -181,4 +295,11 @@ footer {
     scale: 2.5;
     color: #2196F3;
     text-shadow: -1.2px 0 black, 0 1.2px black, 1.2px 0 black, 0 -1.2px black;
+}
+
+#travelillustration {
+    width: 320px;
+    margin-left: 935px;
+    position: absolute;
+    top: 363px;
 }
